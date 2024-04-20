@@ -5,9 +5,7 @@ import { params } from "./variable.js";
 const product = document.querySelector("#products");
 
 export const drawProduct_sort = () => {
-    // console.log(params);
     const api = `${"http://localhost:3000/products"}?_sort=${params.sort}&_page=${params.page}&_per_page=${params.limit}&category=${params.category}`;
-    console.log(api);
     fetchApi(api)
     .then((data) => {
     let htmls = data.data.map((item) => {
